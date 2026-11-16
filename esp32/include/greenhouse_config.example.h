@@ -1,6 +1,6 @@
 #pragma once
 
-// Copy to config.h in this folder and edit the copy. Git ignores config.h.
+// Copy to greenhouse_config.h in this folder and edit the copy. Git ignores greenhouse_config.h.
 #define WIFI_SSID "YOUR_WIFI_NAME"
 #define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
 #define SERVER_URL "http://192.168.1.10:8000/api/iot/readings"

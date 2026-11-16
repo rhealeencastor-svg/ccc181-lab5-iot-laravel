@@ -5,10 +5,11 @@
 #include <time.h>
 #include <math.h>
 
-#if __has_include("config.h")
-#include "config.h"
+// A project-specific name avoids unrelated framework headers named config.h.
+#if __has_include("greenhouse_config.h")
+#include "greenhouse_config.h"
 #else
-#include "config.example.h"
+#include "greenhouse_config.example.h"
 #endif
 
 DHT dht(DHT_PIN, DHT_TYPE);
@@ -89,7 +90,7 @@ void setup() {
     dht.begin();
     configured = hasConfiguration();
     if (!configured) {
-        Serial.println("Copy include/config.example.h to include/config.h and set Wi-Fi, server IP, and token.");
+        Serial.println("Copy include/greenhouse_config.example.h to include/greenhouse_config.h and set Wi-Fi, server IP, and token.");
         return;
     }
     WiFi.mode(WIFI_STA);

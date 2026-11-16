@@ -41,7 +41,7 @@ Install PHP 8.2+ with MySQL and SQLite extensions, Composer, and MySQL (XAMPP is
 
 5. Open http://127.0.0.1:8000/iot-dashboard. It will be empty until you submit a reading. Follow [the API guide](docs/API.md) to test with Postman before connecting hardware.
 
-The configuration script generates a random `IOT_DEVICE_TOKEN` in your local `.env` and preserves an existing token. Use that same token in Postman and the ESP32 configuration. Keep the real `.env` and `esp32/include/config.h` private; Git ignores both. After changing `.env`, run `php artisan config:clear` and restart the server. The app uses `config('iot.device_token')`, so device authentication also works with Laravel's configuration cache.
+The configuration script generates a random `IOT_DEVICE_TOKEN` in your local `.env` and preserves an existing token. Use that same token in Postman and the ESP32 configuration. Keep the real `.env` and `esp32/include/greenhouse_config.h` private; Git ignores both. After changing `.env`, run `php artisan config:clear` and restart the server. The app uses `config('iot.device_token')`, so device authentication also works with Laravel's configuration cache.
 
 Composer resolves dependencies for PHP 8.2 compatibility to avoid the PHP-version mismatch encountered in the earlier CRUD setup. Keep the generated `composer.lock` when working as a group.
 
@@ -49,7 +49,7 @@ Composer resolves dependencies for PHP 8.2 compatibility to avoid the PHP-versio
 
 Install PlatformIO in VS Code. Open the `esp32` folder as a separate project.
 
-1. Copy `esp32/include/config.example.h` to `esp32/include/config.h`.
+1. Copy `esp32/include/greenhouse_config.example.h` to `esp32/include/greenhouse_config.h`.
 2. Set your 2.4 GHz Wi-Fi name and password, computer LAN IP in `SERVER_URL`, and the matching Laravel device token. Use an identifier such as `ESP32-GREENHOUSE-01` with letters, digits, and hyphens.
 3. Select `esp32-wroom` for an ESP32-WROOM board or `esp32-s3` for an ESP32-S3-DevKitC-1. Build before uploading.
 4. Wire the DHT22 or DHT11 as shown in [the ESP32 guide](docs/ESP32.md). Set `DHT_TYPE` to match it.
@@ -76,7 +76,7 @@ The GitHub Actions workflow runs the PHP tests and builds both ESP32 board targe
 
 ## Progress
 
-The Laravel API, sensor migration/model, dashboard, ESP32 firmware, configuration examples, and feature tests are implemented. Local PHP syntax and Composer configuration checks are recorded in the testing report. Dependency downloads were blocked in the authoring session, so full Laravel tests and firmware compilation require verification through GitHub Actions or your local environment. No physical board has been uploaded or tested, and MySQL/Postman demonstrations and report screenshots remain to be collected.
+The Laravel API, sensor migration/model, dashboard, ESP32 firmware, configuration examples, and feature tests are implemented. Local PHP syntax and Composer configuration checks are recorded in the testing report. All 11 Laravel feature tests passed in GitHub Actions. The ESP32 configuration header was renamed to avoid a framework header collision; both board builds are being rechecked. No physical board has been uploaded or tested, and MySQL/Postman demonstrations and report screenshots remain to be collected.
 
 ## Next steps
 

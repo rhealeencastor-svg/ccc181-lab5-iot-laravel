@@ -16,7 +16,7 @@ A bare four-pin DHT sensor generally needs a 4.7–10 kΩ pull-up resistor betwe
 
 ## PlatformIO in VS Code
 
-Open the `esp32` folder. Copy `include/config.example.h` to `include/config.h` and edit only the local copy.
+Open the `esp32` folder. Copy `include/greenhouse_config.example.h` to `include/greenhouse_config.h` and edit only the local copy.
 
 | Setting | What to enter |
 | --- | --- |
@@ -51,4 +51,4 @@ This is a local HTTP lab example. Hardware behavior and your exact sensor/board 
 
 ## Arduino IDE alternative
 
-PlatformIO is the primary layout, matching the earlier VS Code lab workflow. For Arduino IDE, create a sketch folder named `GreenhouseMonitor`, copy `src/main.cpp` into `GreenhouseMonitor.ino`, and copy your local `include/config.h` into that folder. Install the Espressif ESP32 board package, Adafruit DHT sensor library, and Adafruit Unified Sensor. Select the matching board and serial port. Then compile and upload. Keep that local credential file out of Git.
+PlatformIO is the primary layout, matching the earlier VS Code lab workflow. For Arduino IDE, create a sketch folder named `GreenhouseMonitor`, copy `src/main.cpp` into `GreenhouseMonitor.ino`, and copy your local `include/greenhouse_config.h` into that folder. Install the Espressif ESP32 board package, Adafruit DHT sensor library, and Adafruit Unified Sensor. Select the matching board and serial port. Then compile and upload. Keep that local credential file out of Git.
