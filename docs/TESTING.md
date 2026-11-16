@@ -6,11 +6,15 @@
 | --- | --- | --- |
 | PHP source syntax | 27 PHP source files passed php -l | Pass |
 | Composer project configuration | composer validate --strict passed | Pass |
-| Full Laravel feature tests | All 11 feature tests passed in GitHub Actions run #1 (SQLite in memory) | Pass |
-| ESP32 compilation | Initial build exposed a configuration-header name collision; renamed to greenhouse_config.h and awaiting the next run | Pending |
+| Full Laravel feature tests | All 11 feature tests passed in GitHub Actions run #2 (SQLite in memory) | Pass |
+| ESP32 compilation | ESP32-WROOM and ESP32-S3 builds passed in GitHub Actions run #2 | Pass |
 | Physical ESP32, sensor, Wi-Fi and MySQL integration | No hardware demonstration performed | Not run |
 
 GitHub Actions runs the Laravel feature tests and both ESP32 builds after pushes. Its result verifies those automated checks only, not physical hardware or your local MySQL setup. Inspect the Actions tab and record the actual run outcome.
+
+Verified run: https://github.com/rhealeencastor-svg/ccc181-lab5-iot-laravel/actions/runs/43903643194
+
+The initial firmware check found an ambiguous config.h include. The project now uses greenhouse_config.h; the corrected code passed both board builds.
 
 ## Automated feature coverage
 

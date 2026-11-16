@@ -76,7 +76,7 @@ The GitHub Actions workflow runs the PHP tests and builds both ESP32 board targe
 
 ## Progress
 
-The Laravel API, sensor migration/model, dashboard, ESP32 firmware, configuration examples, and feature tests are implemented. Local PHP syntax and Composer configuration checks are recorded in the testing report. All 11 Laravel feature tests passed in GitHub Actions. The ESP32 configuration header was renamed to avoid a framework header collision; both board builds are being rechecked. No physical board has been uploaded or tested, and MySQL/Postman demonstrations and report screenshots remain to be collected.
+The Laravel API, sensor migration/model, dashboard, ESP32 firmware, configuration examples, and feature tests are implemented. Local PHP syntax and Composer configuration checks are recorded in the testing report. All 11 Laravel feature tests and both ESP32-WROOM/S3 firmware builds passed in [GitHub Actions run #2](https://github.com/rhealeencastor-svg/ccc181-lab5-iot-laravel/actions/runs/43903643194). No physical board has been uploaded or tested, and MySQL/Postman demonstrations and report screenshots remain to be collected.
 
 ## Next steps
 
